@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.special import erf
-from myplot import Plot
-from constants import PRE
-from myprocess import fit
+from iPlot import Plot
+from iConstants import PRE
+from iProcess import fit
 
 POSITIONS = [30, 35, 37, 39, 41, 43, 45, 47, 48, 49, 50, 51, 53, 55, 57, 59, 61, 63, 68]
 INTENSITIES = [[225.7, 225.5, 226.0],

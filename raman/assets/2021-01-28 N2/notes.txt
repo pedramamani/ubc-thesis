@@ -1,0 +1,15 @@
+N2 Raman
+
+* Delay: 250 ps
+* Pressure: 1 atm
+* CFG Energy: 2.2mJ
+
+y FP = 22.95mm
+x = 17.64mm manual + 23.51mm motorized
+raman threshold wavelength ~ 402nm
+raman center wavelength = 398nm
+notch center wavelength ~ 784nm
+
+Observations
+* Changing notch lateral position affected neighbouring Raman peak ratios
+* Don't trust 2+ fiber data with nonzero vertical position. Positions may not match.

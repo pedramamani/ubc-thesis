@@ -1,11 +1,8 @@
 import os
 import pathlib
 from xfrog import Xfrog
-from xfrog_rel import XfrogRel
-from constants import PRE
-import myprocess
-import myplot
-import spectrum
+from iConstants import PRE
+import iPlot
 
 DIR = pathlib.Path(os.path.dirname(__file__))
 NAME = os.path.basename(DIR)
@@ -16,7 +13,7 @@ if __name__ == '__main__':
     xfrog = Xfrog(ASSETS_DIR / 'run_2/3', probe_zero_mm, ASSETS_DIR / 'run_2/bg_cfg.xls', ASSETS_DIR / 'run_2/bg_probe.xls')
     xfrog_ctrl = Xfrog(ASSETS_DIR / 'run_2/4', probe_zero_mm, ASSETS_DIR / 'run_2/bg_cfg.xls', ASSETS_DIR / 'run_2/bg_probe.xls')
 
-    plot = myplot.Plot()
+    plot = iPlot.Plot()
     plot.line(xfrog.delays / PRE.p, xfrog_ctrl.peak_intensities, format_='--')
     plot.line(xfrog.delays / PRE.p, xfrog.peak_intensities)
     plot.show(xlabel='Delay (ps)', ylabel='Peak Intensity (a.u.)', legend=['Full', 'Pierced'], grid=True)

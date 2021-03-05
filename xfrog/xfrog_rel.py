@@ -1,17 +1,16 @@
-import myplot
+import iPlot
 import numpy as np
-from constants import PRE, c
-
+from iConstants import *
 REL_NORM_FACTOR = 2
 
 
 class XfrogRel:
     def __init__(self, xfrog, xfrog_ctrl):
-        self.wavelengths = xfrog_ctrl.wavelengths.copy()
+        self.wavelengths = xfrog_ctrl.rawWavelengths.copy()
         self.delays = xfrog_ctrl.delays.copy()
         self.peak_wavelengths = xfrog_ctrl.peak_wavelengths.copy()
 
-        self.intensities_rel = self._rel_norm(xfrog.intensities, xfrog_ctrl.intensities)
+        self.intensities_rel = self._rel_norm(xfrog.rawIntensities, xfrog_ctrl.rawIntensities)
         # self.intensities_rel = xfrog_ctrl.intensities - xfrog.intensities
         self.peak_intensities_rel = self._rel_norm(xfrog.peak_intensities, xfrog_ctrl.peak_intensities)
 
@@ -23,14 +22,14 @@ class XfrogRel:
         return self
 
     def cmap_raw(self):
-        plot = myplot.Plot()
+        plot = iPlot.Plot()
         extent = [self.delays[0] / PRE.p, self.delays[-1] / PRE.p, self.wavelengths[0] / PRE.n, self.wavelengths[-1] / PRE.n]
         plot.cmap(self.intensities_rel, label='Intensity Difference (a.u.)', extent=extent, flip=True)
         plot.show(xlabel='Delay (ps)', ylabel='Wavelength (nm)')
         return self
 
     def plot_peak_intensities(self, title=None):
-        plot = myplot.Plot()
+        plot = iPlot.Plot()
         plot.line(self.delays / PRE.p, self.peak_intensities_rel)
         plot.show(xlabel='Delay (ps)', ylabel='Relative Peak Intensity (a.u.)', title=title, grid=True)
         return self

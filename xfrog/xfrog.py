@@ -1,10 +1,10 @@
 import pathlib
 import os
-import spectrum
-import myplot
-import myprocess
+from oldModules import cfgSpectrum
+import iPlot
+import iProcess
 import numpy as np
-from constants import PRE, c
+from iConstants import *
 
 WAVELENGTH_RANGE_NM = (395, 405)
 
@@ -15,21 +15,21 @@ class Xfrog:
         file_names = os.listdir(data_folder)
         delays, intensities, peak_wavelengths, peak_intensities = [], [], [], []
 
-        spec_cfg_bg = spectrum.Spectrum(cfg_bg_file)
+        spec_cfg_bg = cfgSpectrum.CfgSpectrum(cfg_bg_file)
         spec_cfg_bg.remove_bg()
-        spec_probe_bg = spectrum.Spectrum(probe_bg_file)
+        spec_probe_bg = cfgSpectrum.CfgSpectrum(probe_bg_file)
         spec_probe_bg.remove_bg()
         bg_intensities = np.add(spec_cfg_bg.intensities, spec_probe_bg.intensities)
 
         for file_name in file_names:
             position_mm = self._file_name_to_position_mm(file_name)
-            delay = 2 * (position_mm - probe_zero_position_mm) * PRE.m / c
-            spec = spectrum.Spectrum(base_path / file_name)
+            delay = 2 * (position_mm - probe_zero_position_mm) * PRE.m / PHYS.c
+            spec = cfgSpectrum.CfgSpectrum(base_path / file_name)
             spec.remove_bg()
             spec.intensities = np.subtract(spec.intensities, bg_intensities)
             spec.zoom(*wavelength_range_nm)
 
-            peak_index = myprocess.index_peaks(spec.intensities, prominence=0.8)[0]
+            peak_index = iProcess.indexPeaks(spec.intensities, prominence=0.8)[0]
             peak_intensity = spec.intensities[peak_index]
 
             delays.append(delay)
@@ -44,20 +44,20 @@ class Xfrog:
         self.peak_intensities = np.array(peak_intensities)
 
     def cmap_raw(self, title=None):
-        plot = myplot.Plot()
+        plot = iPlot.Plot()
         extent = [self.delays[0] / PRE.p, self.delays[-1] / PRE.p, self.wavelengths[0] / PRE.n, self.wavelengths[-1] / PRE.n]
         plot.cmap(self.intensities, label='Intensity (a.u.)', extent=extent, flip=True)
         plot.show(xlabel='Delay (ps)', ylabel='Wavelength (nm)', title=title)
         return self
 
     def plot_peak_wavelengths(self, title=None):
-        plot = myplot.Plot()
+        plot = iPlot.Plot()
         plot.line(self.delays / PRE.p, self.peak_wavelengths / PRE.n, format_='o-')
         plot.show(xlabel='Delay (ps)', ylabel='Peak Wavelength (nm)', title=title)
         return self
 
     def plot_peak_intensities(self, title=None):
-        plot = myplot.Plot()
+        plot = iPlot.Plot()
         plot.line(self.delays / PRE.p, self.peak_intensities)
         plot.show(xlabel='Delay (ps)', ylabel='Peak Intensity (a.u.)', title=title, grid=True)
         return self

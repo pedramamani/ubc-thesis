@@ -1,5 +1,5 @@
-from myprocess import *
-from myplot import Plot
+from iProcess import *
+from iPlot import Plot
 
 
 if __name__ == '__main__':
@@ -7,7 +7,7 @@ if __name__ == '__main__':
     y = [1.5, 2, 3, 3.7]
     sigma = [0.1, 0.3, 0.2, 0.3]
 
-    f = fit_func(Function.line, x, y, sigma)
+    f = fitFunc(Function.line, x, y, sigma)
     x_vals = [0, 2, 4]
     y_vals, y_errors = f(x_vals)
 

@@ -1,0 +1,8 @@
+coordinates (top-down view)
+z.__ y (blue arm)
+ |
+ x
+ (red arm)
+
+FP: y = 23mm
+notch position: x = 18mm

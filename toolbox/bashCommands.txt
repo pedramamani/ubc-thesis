@@ -1,0 +1,1 @@
+Generate video from images: ffmpeg -framerate 20 -i %d.png -r 30 -pix_fmt yuv720p video.mp4

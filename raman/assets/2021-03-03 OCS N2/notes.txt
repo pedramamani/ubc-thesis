@@ -1,0 +1,10 @@
+30kPa N2
+7kPa OCS
+circular probe
+156 delay
+2.4 mJ
+FP position 23.35
+
+Observation
+Changing lateral position affects super rotor populations
+Can cut OCS and retain N2 superrotos!

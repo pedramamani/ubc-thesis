@@ -1,0 +1,12 @@
+coordinates (top-down view)
+z.__ y (blue arm)
+ |
+ x
+ (red arm)
+
+notch center wavelength: 784nm
+FP: y = 22.95mm
+notch position: x = 17.64mm manual + 23.51mm motorized
+
+Notes
+- Don't trust 2 or above fiber data with nonzero vertical position. Positions may not match.
