@@ -1,6 +1,7 @@
 import os
 import pathlib
 import re
+from types import SimpleNamespace
 
 INFO_FILE_NAME = 'info.txt'
 NOTES_FILE_NAME = 'notes.txt'
@@ -84,12 +85,12 @@ class Dataset:
             for column, value in enumerate(line.split()):
                 name = names[column]
                 if value == '.' and len(info) != 0:
-                    lineInfo[name] = info[-1][name]
+                    lineInfo[name] = info[-1].__dict__[name]
                 elif value == '.':
                     raise Exception(f'First "{name}" is undefined.')
                 elif value == '-':
                     lineInfo[name] = None
                 else:
                     lineInfo[name] = types[column](value)
-            info.append(lineInfo)
+            info.append(SimpleNamespace(**lineInfo))
         return info

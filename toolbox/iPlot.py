@@ -10,12 +10,11 @@ GRID_COLOR = (0.85, 0.85, 0.85)
 SHADE_OPACITY = 0.2
 TITLE_FONT_SIZE = 16
 LABEL_FONT_SIZE = 12
-ANNOTATE_FONT_SIZE = 8
 
 ASPECT_RATIO = 'auto'
 LINE_COLOR = 'k'
-Z_ORDER = 0
-LINE_WIDTH = 1.4
+Z_ORDER = 3
+LINE_WIDTH = 1.0
 MARKER_SIZE = 5
 FIGURE_SIZE = (6, 4)
 MARGINS = (0, 0.1)
@@ -30,19 +29,19 @@ class Plot:
         self.gridColor = gridColor
         self.lastPlot = None
 
-    def line(self, x, y, format_=None, lineWidth=LINE_WIDTH, markerSize=MARKER_SIZE):
+    def line(self, x, y, format_=None, lineWidth=LINE_WIDTH, markerSize=MARKER_SIZE, zOrder=Z_ORDER):
         plt.figure(self.number)
         if format_ is None:
-            self.lastPlot = plt.plot(x, y, linewidth=lineWidth, markersize=markerSize)
+            self.lastPlot = plt.plot(x, y, linewidth=lineWidth, markersize=markerSize, zorder=zOrder)
         else:
-            self.lastPlot = plt.plot(x, y, format_, linewidth=lineWidth, markersize=markerSize)
+            self.lastPlot = plt.plot(x, y, format_, linewidth=lineWidth, markersize=markerSize, zorder=zOrder)
         return self
 
-    def bar(self, x, y, width=None, zOrder=Z_ORDER):
+    def bar(self, x, y, width=None, zOrder=Z_ORDER, color=LINE_COLOR):
         plt.figure(self.number)
-        if width is None:
-            width = np.mean(x[1:] - x[:-1])
-        self.lastPlot = plt.bar(x, y, width=width, zorder=zOrder)
+        width = 1 if width is None else width
+        width *= np.mean(x[1:] - x[:-1])
+        self.lastPlot = plt.bar(x, y, width=width, zorder=zOrder, color=color)
         return self
 
     def shade(self, x, yLow, yHigh, color=None):
@@ -82,12 +81,13 @@ class Plot:
         plt.yticks(y, labels)
         return self
 
-    def annotate(self, labels, x, y, offset=(0, 0), fontSize=ANNOTATE_FONT_SIZE):  # offset in pixels
+    def annotate(self, labels, x, y, offset=(0, 0), rotation=0, fontSize=8):  # offset in pixels
         plt.figure(self.number)
         for label, x_, y_ in zip(labels, x, y):
-            plt.annotate(label, (x_, y_), xytext=offset, textcoords='offset points', ha='center', va='bottom', size=fontSize)
+            plt.annotate(label, (x_, y_), xytext=offset, textcoords='offset points', ha='center', va='center', rotation=rotation, size=fontSize)
 
-    def show(self, legend=None, xlabel=None, ylabel=None, xrange=None, yrange=None, title=None, margins=MARGINS, grid=False, name=None):
+    def show(self, legend=None, xlabel=None, ylabel=None, xrange=None, yrange=None, xscale='linear', yscale='linear',
+             title=None, margins=MARGINS, grid=False, name=None):
         plt.figure(self.number)
         self._formatLegend(legend)
         if legend is not None:
@@ -97,12 +97,14 @@ class Plot:
         if xrange is not None:
             plt.xlim(xrange)
         if grid:
-            plt.grid(color=self.gridColor)
+            plt.grid(color=self.gridColor, zorder=0)
         plt.xlabel(xlabel, fontsize=self.labelFontSize)
         plt.ylabel(ylabel, fontsize=self.labelFontSize)
-
         plt.xticks(fontsize=self.labelFontSize)
         plt.yticks(fontsize=self.labelFontSize)
+        plt.xscale(xscale)
+        plt.yscale(yscale)
+
         plt.title(title, fontsize=self.titleFontSize)
         plt.gcf().canvas.set_window_title(self._windowTitle() if name is None else name)
         plt.margins(*margins)

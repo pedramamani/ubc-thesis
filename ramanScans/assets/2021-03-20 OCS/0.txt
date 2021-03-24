@@ -1,0 +1,8 @@
+20210320101226
+Scan with: Frog_Back_and_Forth.vi
+Scan delay interval, ps,   0.0 to 200.0  with step   2.00
+Spectrum, nm,   398.00 - 406.00
+With averaging  5
+Zero delay position 47.500
+
+OCS no notch

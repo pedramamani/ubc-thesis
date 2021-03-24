@@ -1,0 +1,4 @@
+30kPa N2
+circular probe
+140 delay
+2.4 mJ

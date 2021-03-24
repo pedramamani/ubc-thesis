@@ -1,0 +1,14 @@
+30kPa N2
+10kPa OCS
+circular probe
+132ps delay for N2, 124ps delay for OCS
+2.4 mJ
+FP position 22.64
+
+Observations
+• First observe N2 and OCS Raman separately
+• Then combine for mixture
+• Place notch and adjust to block most OCS and allow N2 super rotors
+• Change probe delay and observe no change in signal (no quantum beating)
+• Switch to N2 and take data for some notch parameters
+• Switch to OCS and take data for same notch parameters

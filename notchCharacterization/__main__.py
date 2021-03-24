@@ -1,48 +1,54 @@
 import os
 import pathlib
-from oldModules.notchSpectrum import NotchSpectrum
-from oldModules.cfgSpectrum import CfgSpectrum
+from cfg.cfgNotch import CfgNotch
+from cfg.cfgControl import CfgControl
 from dataset import Dataset
 import iPlot
 import iProcess
 import numpy as np
+from notchCharacterization.cache import *
 
 DIR = pathlib.Path(os.path.dirname(__file__))
 ASSETS_DIR = DIR / 'assets'
 
 
-def extractData(folderName):
-    folderPath = ASSETS_DIR / folderName
-    dataset = Dataset(folderPath)
-    controlSpectrum = CfgSpectrum(folderPath / dataset.__next__()[0])
-    data = []
-    for fileName, info in dataset:
-        if info['tag'] != 'bad':
-            notchSpectrum = NotchSpectrum(folderPath / fileName, controlSpectrum)
-            info.update(notchSpectrum.notchParams)
-            data.append(info)
-    return data
-
-
 def plotAll(folderName):
     folderPath = ASSETS_DIR / folderName
     dataset = Dataset(folderPath)
-    controlSpectrum = CfgSpectrum(folderPath / dataset.__next__()[0])
+    controlSpectrum = CfgControl(folderPath / dataset.__next__()[0])
 
     for fileName, info in dataset:
-        notchSpectrum = NotchSpectrum(folderPath / fileName, controlSpectrum)
+        if info.tag in {'faulty'}:
+            print(f'Data number {info.number} was skipped due to "{info.tag}" tag.')
+            print()
+            continue
+        notchSpectrum = CfgNotch(folderPath / fileName, controlSpectrum)
         print(info)
-        print(notchSpectrum.notchParams)
+        print(notchSpectrum.notchMetrics)
         print()
         notchSpectrum.plotNotch()
 
 
+def extractData(folderName):
+    folderPath = ASSETS_DIR / folderName
+    dataset = Dataset(folderPath)
+    controlSpectrum = CfgControl(folderPath / dataset.__next__()[0])
+    data = []
+    for fileName, info in dataset:
+        if info.tag in {'faulty'}:
+            continue
+        notchSpectrum = CfgNotch(folderPath / fileName, controlSpectrum)
+        info.__dict__.update(notchSpectrum.notchMetrics.__dict__)
+        data.append(info)
+    return data
+
+
 def transitionHwhmVsFpDistance(data, doFit=True):
     x, y = [], []
-    for info in data:
-        if info['fiberConfig'].isdigit() and info['verticalPosition'] == 0:
-            x.append(info['fpDistance'])
-            y.append(info['transitionHwhm'])
+    for info in data.values():
+        if info.fiberConfig.isdigit() and info.verticalPosition == 0:
+            x.append(info.fpDistance)
+            y.append(info.transitionHwhm)
             print(info)
 
     plot = iPlot.Plot()
@@ -62,10 +68,10 @@ def transitionHwhmVsFpDistance(data, doFit=True):
 
 def depthVsVerticalPosition(data):
     x, y = [], []
-    for info in data:
-        if info['fiberConfig'] == '1' and info['fpDistance'] == 0:
-            x.append(info['verticalPosition'])
-            y.append(info['depth'])
+    for info in data.values():
+        if info.fiberConfig == '1' and info.fpDistance == 0:
+            x.append(info.verticalPosition)
+            y.append(info.depth)
             print(info)
 
     plot = iPlot.Plot()
@@ -75,10 +81,10 @@ def depthVsVerticalPosition(data):
 
 def fwhmVsVerticalPosition(data):
     x, y = [], []
-    for info in data:
-        if info['fiberConfig'] == '1' and info['fpDistance'] == 0:
-            x.append(info['verticalPosition'])
-            y.append(info['fwhm'])
+    for info in data.values():
+        if info.fiberConfig == '1' and info.fpDistance == 0:
+            x.append(info.verticalPosition)
+            y.append(info.fwhm)
             print(info)
 
     p2 = iPlot.Plot()
@@ -88,10 +94,10 @@ def fwhmVsVerticalPosition(data):
 
 def fwhmVsFiberCount(data, doFit=True):
     x, y = [], []
-    for info in data:
-        if all([info['fiberConfig'].isdigit(), info['fpDistance'] == 0, info['verticalPosition'] == 0]):
-            x.append(int(info['fiberConfig']))
-            y.append(info['fwhm'])
+    for info in data.values():
+        if all([info.fiberConfig.isdigit(), info.fpDistance == 0, info.verticalPosition == 0]):
+            x.append(int(info.fiberConfig))
+            y.append(info.fwhm)
             print(info)
 
     p = iPlot.Plot()
@@ -107,9 +113,11 @@ def fwhmVsFiberCount(data, doFit=True):
 
 
 if __name__ == '__main__':
-    plotAll('2021-01-21')
-    # data = extractData('2021-01-21')
-    # transitionHwhmVsFpDistance(data)
-    # depthVsVerticalPosition(data)
-    # fwhmVsVerticalPosition(data)
-    # fwhmVsFiberCount(data)
+    # plotAll('2021-01-28')
+    # assets = extractData('2021-01-28')
+
+    data = data20210128
+    # transitionHwhmVsFpDistance(assets)
+    # depthVsVerticalPosition(assets)
+    # fwhmVsVerticalPosition(assets)
+    # fwhmVsFiberCount(assets)

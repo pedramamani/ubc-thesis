@@ -26,7 +26,7 @@ Example `info.txt` file:
 # bad tag means notch did not attenuate uniformly
 # fpDistance is in mm
 
-- number(int) fiberConfig fpDistance(int) tag?
+- number(int) fiberConfig fpDistance(int) tag
 0 2 0 -
 1 2 5 -
 ...

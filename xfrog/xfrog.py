@@ -1,6 +1,6 @@
 import pathlib
 import os
-from oldModules import cfgSpectrum
+from modules.cfg.cfgControl import CfgControl
 import iPlot
 import iProcess
 import numpy as np
@@ -15,17 +15,14 @@ class Xfrog:
         file_names = os.listdir(data_folder)
         delays, intensities, peak_wavelengths, peak_intensities = [], [], [], []
 
-        spec_cfg_bg = cfgSpectrum.CfgSpectrum(cfg_bg_file)
-        spec_cfg_bg.remove_bg()
-        spec_probe_bg = cfgSpectrum.CfgSpectrum(probe_bg_file)
-        spec_probe_bg.remove_bg()
+        spec_cfg_bg = CfgControl(cfg_bg_file)
+        spec_probe_bg = CfgControl(probe_bg_file)
         bg_intensities = np.add(spec_cfg_bg.intensities, spec_probe_bg.intensities)
 
         for file_name in file_names:
             position_mm = self._file_name_to_position_mm(file_name)
             delay = 2 * (position_mm - probe_zero_position_mm) * PRE.m / PHYS.c
-            spec = cfgSpectrum.CfgSpectrum(base_path / file_name)
-            spec.remove_bg()
+            spec = CfgControl(base_path / file_name)
             spec.intensities = np.subtract(spec.intensities, bg_intensities)
             spec.zoom(*wavelength_range_nm)
 
@@ -34,10 +31,10 @@ class Xfrog:
 
             delays.append(delay)
             intensities.append(spec.intensities)
-            peak_wavelengths.append(spec.wavelengths[peak_index])
+            peak_wavelengths.append(spec.rawWavelengths[peak_index])
             peak_intensities.append(peak_intensity)
 
-        self.wavelengths = spec.wavelengths.copy()
+        self.wavelengths = spec.rawWavelengths.copy()
         self.delays = np.array(delays)
         self.intensities = np.array(intensities).T
         self.peak_wavelengths = np.array(peak_wavelengths)

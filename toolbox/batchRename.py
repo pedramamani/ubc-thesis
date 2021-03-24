@@ -1,7 +1,7 @@
 import os
 import pathlib
 
-FILES_DIR = pathlib.Path('C:/Users/amani/PycharmProjects/ubc-thesis/raman/assets/2021-03-03 OCS N2/notch')
+FILES_DIR = pathlib.Path('C:/Users/amani/PycharmProjects/ubc-thesis/raman/assets/2021-03-10 OCS/notch')
 
 
 def constructName(index, oldName):

@@ -1,4 +1,4 @@
-number(int) lastNotchJ(int) tag?
+number(int) lastNotchJ(int) tag
 0 0 control
 1 30 -
 2 30 -

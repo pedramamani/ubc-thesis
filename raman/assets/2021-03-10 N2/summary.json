@@ -1,0 +1,162 @@
+[
+  {
+    "arm": "blue",
+    "depth": 0.7762074982006046,
+    "centerFrequency": 3.1257663940833686,
+    "fwhm": 0.20130552125962772,
+    "transitionHwhm": 0.05117796737618947,
+    "n2Population": 1.09830196144861
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8716929075603121,
+    "centerFrequency": 3.2073895347318824,
+    "fwhm": 0.16225070633031735,
+    "transitionHwhm": 0.06091520739417889,
+    "n2Population": 0.22697564860962832
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8672023347903515,
+    "centerFrequency": 3.168902560950476,
+    "fwhm": 0.1769449873821683,
+    "transitionHwhm": 0.0607779268665477,
+    "n2Population": 0.2499070495363623
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8447556849034106,
+    "centerFrequency": 3.180050089307319,
+    "fwhm": 0.15021681699038986,
+    "transitionHwhm": 0.056682495757354054,
+    "n2Population": 0.3018058691686844
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7188517157064201,
+    "centerFrequency": 3.2106904114548493,
+    "fwhm": 0.11921685115874675,
+    "transitionHwhm": 0.05492047832121893,
+    "n2Population": 0.3890969176305498
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5872454999871588,
+    "centerFrequency": 3.2095219862836966,
+    "fwhm": 0.1109886940529517,
+    "transitionHwhm": 0.054156482968571916,
+    "n2Population": 0.6606884856686067
+  },
+  {
+    "arm": "blue",
+    "depth": 0.48758430205988457,
+    "centerFrequency": 3.211475917630087,
+    "fwhm": 0.10826279587917789,
+    "transitionHwhm": 0.05127180315728451,
+    "n2Population": 0.7809704498948681
+  },
+  {
+    "arm": "blue",
+    "depth": 0.334040988266211,
+    "centerFrequency": 3.2240989673959657,
+    "fwhm": 0.10092257545594675,
+    "transitionHwhm": 0.04519240458155693,
+    "n2Population": 0.8857220837477497
+  },
+  {
+    "arm": "blue",
+    "depth": 0.774176402511733,
+    "centerFrequency": 3.1253036997161203,
+    "fwhm": 0.20134358158745497,
+    "transitionHwhm": 0.051070014990975646,
+    "n2Population": 0.2303386673137629
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7639630908160362,
+    "centerFrequency": 3.123769885048213,
+    "fwhm": 0.20323525099564796,
+    "transitionHwhm": 0.057138364651958845,
+    "n2Population": 0.18524183907436315
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7438534928545739,
+    "centerFrequency": 3.120595449352952,
+    "fwhm": 0.20688470096408337,
+    "transitionHwhm": 0.07395750763517579,
+    "n2Population": 0.17836649137157512
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7122696324788623,
+    "centerFrequency": 3.1206449256422872,
+    "fwhm": 0.2158174029189941,
+    "transitionHwhm": 0.09735062589358194,
+    "n2Population": 0.15388615183145937
+  },
+  {
+    "arm": "blue",
+    "depth": 0.6493822528387274,
+    "centerFrequency": 3.1213514768731976,
+    "fwhm": 0.2350702458982793,
+    "transitionHwhm": 0.11799923923704844,
+    "n2Population": 0.12101881114324108
+  },
+  {
+    "arm": "blue",
+    "depth": 0.562066861918604,
+    "centerFrequency": 3.121191106006853,
+    "fwhm": 0.267816189277056,
+    "transitionHwhm": 0.1280398966672171,
+    "n2Population": 0.08519461787339466
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7127202493676176,
+    "centerFrequency": 3.1413035828733515,
+    "fwhm": 0.12036536459831831,
+    "transitionHwhm": 0.05527090828860009,
+    "n2Population": 0.5998803355241036
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8527068416200045,
+    "centerFrequency": 3.1167783234499997,
+    "fwhm": 0.17325761486721364,
+    "transitionHwhm": 0.06129647179939409,
+    "n2Population": 0.2964403007474635
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7772137189092919,
+    "centerFrequency": 3.1060942473323703,
+    "fwhm": 0.2022117734455216,
+    "transitionHwhm": 0.07656702497321886,
+    "n2Population": 0.16505530227042325
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7062324546443448,
+    "centerFrequency": 3.1070991392333407,
+    "fwhm": 0.21398889819912462,
+    "transitionHwhm": 0.09723346735335646,
+    "n2Population": 0.14170021717906608
+  },
+  {
+    "arm": "blue",
+    "depth": 0.6396776994232487,
+    "centerFrequency": 3.1066430024096796,
+    "fwhm": 0.23516157685768718,
+    "transitionHwhm": 0.11671117767430202,
+    "n2Population": 0.07628306092400126
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5551719284798722,
+    "centerFrequency": 3.1078522867065854,
+    "fwhm": 0.2670903380399041,
+    "transitionHwhm": 0.12641181088373873,
+    "n2Population": 0.06801318410520953
+  }
+]

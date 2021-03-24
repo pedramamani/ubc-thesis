@@ -1,0 +1,12 @@
+OCS-N2 Mixture Raman
+
+* Delay: 146 ps
+* Pressure OCS: 7 kPa
+* Pressure N2: 30 kPa
+* CFG Energy: 2.0 mJ
+
+
+y FP = 22.65 mm
+x = 18.41 mm manual + 23.51mm motorized
+raman notch wavelength = 401.9 nm
+notch center wavelength = 784 nm

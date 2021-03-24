@@ -1,0 +1,210 @@
+[
+  {
+    "arm": "blue",
+    "depth": 0.777222569549776,
+    "centerFrequency": 3.1235723199853846,
+    "fwhm": 0.2028996941798583,
+    "transitionHwhm": 0.05083535013108867,
+    "ocsPopulation": 0.0009726906917569087
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8789600830045857,
+    "centerFrequency": 3.133624303615902,
+    "fwhm": 0.20343850219776485,
+    "transitionHwhm": 0.05951290743128592,
+    "ocsPopulation": 0.0003032723829812415
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8745639059592707,
+    "centerFrequency": 3.1888677281681264,
+    "fwhm": 0.16103426789512607,
+    "transitionHwhm": 0.06190291518952343,
+    "ocsPopulation": 0.004334576010414818
+  },
+  {
+    "arm": "blue",
+    "depth": 0.8507937174098038,
+    "centerFrequency": 3.1963172816183616,
+    "fwhm": 0.14289820623437566,
+    "transitionHwhm": 0.05668329527075402,
+    "ocsPopulation": 0.009061187052488314
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7204028732492266,
+    "centerFrequency": 3.2190219828837505,
+    "fwhm": 0.11858620274946756,
+    "transitionHwhm": 0.05615948406588083,
+    "ocsPopulation": 0.1460700337298065
+  },
+  {
+    "arm": "blue",
+    "depth": 0.654862585003934,
+    "centerFrequency": 3.2165427895276766,
+    "fwhm": 0.1111694304737659,
+    "transitionHwhm": 0.05654119142660799,
+    "ocsPopulation": 0.33659166222853426
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5797121086453734,
+    "centerFrequency": 3.1995790959859955,
+    "fwhm": 0.10503269394082533,
+    "transitionHwhm": 0.051603949080644786,
+    "ocsPopulation": 0.4192370850346175
+  },
+  {
+    "arm": "blue",
+    "depth": 0.3687885818776558,
+    "centerFrequency": 3.2065259871697287,
+    "fwhm": 0.0973035700508867,
+    "transitionHwhm": 0.04874429406820833,
+    "ocsPopulation": 0.5575551807799278
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7789391551217125,
+    "centerFrequency": 3.056964017552693,
+    "fwhm": 0.19952510054503086,
+    "transitionHwhm": 0.05106652717435721,
+    "ocsPopulation": 0.0030918989289307063
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7456555419019971,
+    "centerFrequency": 2.9829167709476594,
+    "fwhm": 0.20695376342603752,
+    "transitionHwhm": 0.07555082181454828,
+    "ocsPopulation": 0.0021303035682584772
+  },
+  {
+    "arm": "blue",
+    "depth": 0.6510183605483887,
+    "centerFrequency": 2.9824244144261525,
+    "fwhm": 0.233668311436261,
+    "transitionHwhm": 0.11845869740399656,
+    "ocsPopulation": 0.0029624533996094452
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5048197050763761,
+    "centerFrequency": 2.9817167499489754,
+    "fwhm": 0.30485225698432306,
+    "transitionHwhm": 0.1555985526307185,
+    "ocsPopulation": 0.008658056689744955
+  },
+  {
+    "arm": "blue",
+    "depth": 0.4521853794961646,
+    "centerFrequency": 2.9837444440598397,
+    "fwhm": 0.34411958034074297,
+    "transitionHwhm": 0.17505112030795084,
+    "ocsPopulation": 0.014261198887508139
+  },
+  {
+    "arm": "blue",
+    "depth": 0.393289613744118,
+    "centerFrequency": 2.9826031299045836,
+    "fwhm": 0.39685293489175794,
+    "transitionHwhm": 0.19010033270445512,
+    "ocsPopulation": 0.07812222616722884
+  },
+  {
+    "arm": "blue",
+    "depth": 0.3175452396158516,
+    "centerFrequency": 2.982749120287241,
+    "fwhm": 0.49445839158974325,
+    "transitionHwhm": 0.21336621637546593,
+    "ocsPopulation": 0.11921193561749219
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7203047775755788,
+    "centerFrequency": 2.479096711455312,
+    "fwhm": 0.12120877178181293,
+    "transitionHwhm": 0.05609938951404474,
+    "ocsPopulation": 0.08352565240546782
+  },
+  {
+    "arm": "blue",
+    "depth": 0.677920256075862,
+    "centerFrequency": 3.2949700610283075,
+    "fwhm": 0.11441966728798163,
+    "transitionHwhm": 0.05904953080171427,
+    "ocsPopulation": 0.10079738446061899
+  },
+  {
+    "arm": "blue",
+    "depth": 0.57712241659331,
+    "centerFrequency": 3.3215840626479007,
+    "fwhm": 0.15370217870899772,
+    "transitionHwhm": 0.07690635221902757,
+    "ocsPopulation": 0.1391761346825256
+  },
+  {
+    "arm": "blue",
+    "depth": 0.718586937897738,
+    "centerFrequency": 3.3129749480679784,
+    "fwhm": 0.1644950715379188,
+    "transitionHwhm": 0.0824439900568448,
+    "ocsPopulation": 0.03314175394993787
+  },
+  {
+    "arm": "blue",
+    "depth": 0.7834796455569624,
+    "centerFrequency": 3.2863343035230606,
+    "fwhm": 0.1818202498094496,
+    "transitionHwhm": 0.08494356441609385,
+    "ocsPopulation": 0.0012574708562636844
+  },
+  {
+    "arm": "blue",
+    "depth": 0.6818627547107294,
+    "centerFrequency": 3.2728102466919156,
+    "fwhm": 0.23103204594974205,
+    "transitionHwhm": 0.11238836757553622,
+    "ocsPopulation": 0.0
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5408737469480135,
+    "centerFrequency": 3.335969910951934,
+    "fwhm": 0.21686562592188618,
+    "transitionHwhm": 0.10404988316527305,
+    "ocsPopulation": 0.03470989407657258
+  },
+  {
+    "arm": "blue",
+    "depth": 0.37379532291304834,
+    "centerFrequency": 3.377328722258267,
+    "fwhm": 0.21174295930087247,
+    "transitionHwhm": 0.09808495015088561,
+    "ocsPopulation": 0.16201402449849103
+  },
+  {
+    "arm": "blue",
+    "depth": 0.34456173408074947,
+    "centerFrequency": 3.3714109641511465,
+    "fwhm": 0.28535580788629933,
+    "transitionHwhm": 0.12147955556689094,
+    "ocsPopulation": 0.08913249304692586
+  },
+  {
+    "arm": "blue",
+    "depth": 0.39685144288279167,
+    "centerFrequency": 3.3752059575454565,
+    "fwhm": 0.285298337248076,
+    "transitionHwhm": 0.12124189725849815,
+    "ocsPopulation": 0.11958547843067639
+  },
+  {
+    "arm": "blue",
+    "depth": 0.5341945632633553,
+    "centerFrequency": 3.3929340400292265,
+    "fwhm": 0.27847137510171255,
+    "transitionHwhm": 0.13064545776974867,
+    "ocsPopulation": 0.012363897272027935
+  }
+]

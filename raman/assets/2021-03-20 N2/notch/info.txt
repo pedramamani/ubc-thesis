@@ -1,0 +1,5 @@
+number(int) fiberConfig fpDistance(float) depth lateralPosition(float) tag
+0 1 0 0 - control
+1 . . . . maximum-supers-evens
+2 . . . . maximum-supers-odds
+3 . . . . minimum-supers

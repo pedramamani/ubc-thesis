@@ -1,0 +1,23 @@
+
+number(int) tag
+0 control
+1 depth
+2 .
+3 .
+4 .
+5 .
+6 .
+7 .
+8 .
+9 fpDistance0
+10 .
+11 .
+12 .
+13 .
+14 .
+15 fpDistance1
+16 .
+17 .
+18 .
+19 .
+20 .
